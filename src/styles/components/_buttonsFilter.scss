@@ -1,13 +1,13 @@
 .container__filter {
     @include flex;
-    min-height: 600px;
+    min-height: 472px;
 
     img {
         max-width: 192px;
     }
 
     .filter__subtitle {
-        @include font(36px, 0, $white-color-font, 700);
+        @include font(36px, 0, $white-color, 700);
         margin: 1em;
         margin-bottom: 1.5em;
     }
@@ -19,11 +19,12 @@
         align-items: center;
 
         .btn {
-            @include font(17px, 0.2em, $white-color-font, 600);
+            @include font(17px, 0.2em, $white-color, 600);
             min-height: 64px;
             min-width: 288px;
             border-radius: 4px;
             text-transform: uppercase;
+            border: 1px solid $purple-color;
 
             &.--normal {
                 background: rgba(0, 0, 0, 0.6);

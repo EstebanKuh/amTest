@@ -1,0 +1,100 @@
+.container__character {
+    @include flex(row, space-around, center);
+    width: 100%;
+    height: 65%;
+    flex-wrap: wrap;
+
+    .--container-info {
+        @include flex(row, left, center);
+        margin-top: 5%;
+
+        .__image {
+            @include flex;
+            width: $card-width;
+            height: $card-heigth;
+            border-radius: 16px 0 0 16px;
+            background: linear-gradient($No-house-color);
+
+            &.Gryffindor {
+                background: linear-gradient($Gryffindor-color);
+            }
+
+            &.Slytherin {
+                background: linear-gradient($Slytherin-color);
+            }
+
+            &.Ravenclaw {
+                background: linear-gradient($Ravenclaw-color);
+            }
+
+            &.Hufflepuff {
+                background: linear-gradient($Hufflepuff-color);
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: top;
+            }
+        }
+
+        .__card {
+            display: grid;
+            width: $card-width;
+            height: $card-heigth;
+            background: $white-color;
+            border-radius: 0 16px 16px 0;
+            justify-content: center;
+
+            &.-dead {
+                background-color: $gray-color;
+            }
+
+
+            .--head {
+                @include flex(row, space-around, center);
+                @include font(14px, 0.1px, $gray-color-font, 600, 19px);
+                text-transform: uppercase;
+
+                .-bookmark {
+                    cursor: pointer;
+                }
+            }
+
+            .--body {
+                .--name {
+                    @include font(30px, 0.1em, $black-color, 600, 46px);
+                    margin: 0;
+                }
+
+                padding: 8px;
+
+                .--general {
+                    @include font(14, 0.1em, #374A59, 400, 27px);
+
+                    .-text {
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .--actions {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button.btn-delete {
+                    @include font(14px, 0.1em, $white-color);
+                    cursor: pointer;
+                    position: absolute;
+                    background-color: $danger-color;
+                    bottom: 0.5em;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}

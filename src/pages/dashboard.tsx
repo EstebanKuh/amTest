@@ -47,9 +47,11 @@ const Dashboard = () => {
 
             <ButtonsFilter filter={filter} setFilter={setFilter} />
 
-            {dataCharacters.map((character: CharacterInfo) =>
-                <CardCharacter character={character} actionDeleteCharacter={actionDeleteCharacter} />
-            )}
+            <div className='container__character'>
+                {dataCharacters.map((character: CharacterInfo) =>
+                    <CardCharacter character={character} actionDeleteCharacter={actionDeleteCharacter} />
+                )}
+            </div>
 
             <Favorites></Favorites>
 
