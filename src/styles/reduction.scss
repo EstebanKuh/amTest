@@ -1,4 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
 @import "variables";
 @import "Mixins";
 @import "General";
 @import "components/buttonsFilter";
+@import "components/cardCharacter";
+
+
+html {
+    font-family: "Open Sans";
+}
+
+body {
+    background-color: black;
+    font-family: "Open Sans";
+}
