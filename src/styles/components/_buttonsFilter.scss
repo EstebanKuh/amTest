@@ -1,0 +1,41 @@
+.container__filter {
+    @include flex;
+    min-height: 600px;
+
+    img {
+        max-width: 192px;
+    }
+
+    .filter__subtitle {
+        @include font(36px, 0, $white-color-font, 700);
+        margin: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    .container_actions {
+        width: 45%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .btn {
+            @include font(17px, 0.2em, $white-color-font, 600);
+            min-height: 64px;
+            min-width: 288px;
+            border-radius: 4px;
+            text-transform: uppercase;
+
+            &.--normal {
+                background: rgba(0, 0, 0, 0.6);
+
+                &:hover {
+                    background: rgba(107, 99, 181, 0.6);
+                }
+            }
+
+            &.--active {
+                background: $purple-color;
+            }
+        }
+    }
+}

@@ -1,25 +1,25 @@
 import React from 'react'
 import Favorites from '../components/Favorites';
 import CardCharacters from '../components/CardCharacter';
-import { TYPE_STAFF, TYPE_STUDENT } from '../utils/constants';
+import ButtonsFilter from '../components/ButtonsFilter';
+
+import background from '../../public/assets/images/background.svg';
 
 const Dashboard = () => {
     const [filter, setFilter] = React.useState<string>('');
 
     return (
-        <div className="App">
-            Selecciona tu filtro
-            <div>
-                <button onClick={() => setFilter(TYPE_STUDENT)}>Estudiantes</button>
-                <button onClick={() => setFilter(TYPE_STAFF)}>Staff</button>
-            </div>
+        <main className="app">
+            <img src={background} className="background_body" alt="background howarts" />
+
+            <ButtonsFilter filter={filter} setFilter={setFilter} />
+
+            <CardCharacters filter={filter} />
 
             <div>
-                <CardCharacters filter={filter} />
+                <Favorites></Favorites>
             </div>
-
-            <Favorites></Favorites>
-        </div>
+        </main>
     )
 }
 
