@@ -1,0 +1,84 @@
+.actions_favs {
+    @include flex(row, center, center);
+    min-width: 280px;
+    min-height: 36px;
+    background-color: $purple-color;
+    position: fixed;
+    top: 0;
+    right: 10%;
+    z-index: 10;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 15px 15px;
+
+    .__btn {
+        @include flex(row, center, center);
+        width: 100%;
+        height: 36px;
+        border: 1px solid #403B6D;
+        background-color: $purple-color;
+        cursor: pointer;
+
+        &.-left {
+            border-radius: 0 0 0 15px;
+        }
+
+        &.-rigth {
+            border-radius: 0 0 15px 0;
+        }
+
+        .--text {
+            @include font(14px, 0.1em, $white-color, $font-bold);
+        }
+
+        .--img-icon {
+            width: 1.2vw;
+            margin-left: 0.2rem;
+        }
+    }
+}
+
+.container_favs {
+    min-width: 280px;
+    background-color: $purple-color;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    position: fixed;
+    top: 0;
+    padding-top: 4;
+    right: 10%;
+    z-index: 5;
+
+    .__list {
+        @include flex(row, center, center);
+        width: 100%;
+        height: 4em;
+        border-bottom: 2px solid #403b6d;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        &.-first {
+            height: 36px;
+        }
+
+        .--img {
+            width: 30px;
+            height: 30px;
+            margin: 0.4em;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .--text {
+            @include font(14px, 0.2em, $white-color, $font-bold);
+            text-align: center;
+            width: 55%;
+        }
+
+        .--icon {
+            cursor: pointer;
+        }
+    }
+}

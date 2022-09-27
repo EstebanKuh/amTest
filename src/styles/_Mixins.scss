@@ -1,0 +1,16 @@
+@mixin flex ($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font ($fontSize, $letterSpacing, $color, $fontWeight: $font-bolder, $lineHeigth: 25px, $fontFamily: 'Open Sans', $fontStyle: normal) {
+    font-family: $fontFamily;
+    font-style: $fontStyle;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $lineHeigth;
+    letter-spacing: $letterSpacing;
+    color: $color;
+}
