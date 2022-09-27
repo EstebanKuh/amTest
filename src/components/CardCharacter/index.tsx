@@ -1,8 +1,21 @@
 import React from 'react';
-import { CardCharacterProp } from '../../types';
-import bookmarkIcon from '../../../public/assets/icons/bookmark.svg';
+import { connect } from 'react-redux';
 
-const CardCharacter = ({ character, actionDeleteCharacter }: CardCharacterProp) => {
+import { CardCharacterProp, CharacterInfo } from '../../types';
+import { ADD_FAVORITE } from '../../redux/constants';
+
+import bookmarkIcon from '../../../public/assets/icons/bookmark.svg';
+import bookmarkIconB from '../../../public/assets/icons/bookmark_fill_black.svg';
+
+const CardCharacter = ({ listFavs, character, actionDeleteCharacter, addFavorite }: CardCharacterProp) => {
+    const [isFavorite, setIsFavorite] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        const isFav = !!listFavs.find((characterFav: CharacterInfo) => characterFav.id === character.id);
+        setIsFavorite(isFav);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [listFavs]);
+
 
     return (
         <div key={character.id} className='--container-info'>
@@ -19,7 +32,8 @@ const CardCharacter = ({ character, actionDeleteCharacter }: CardCharacterProp) 
                         </span>
                     </div>
                     <div className='-bookmark'>
-                        <img src={bookmarkIcon} alt="bookmark icon" />
+                        {!isFavorite && <img onClick={() => addFavorite(character)} src={bookmarkIcon} alt="bookmark icon" />}
+                        {isFavorite && <img onClick={() => addFavorite(character)} src={bookmarkIconB} alt="bookmark icon mark" />}
                     </div>
                 </div>
                 <div className='--body'>
@@ -51,4 +65,21 @@ const CardCharacter = ({ character, actionDeleteCharacter }: CardCharacterProp) 
     )
 }
 
-export default CardCharacter
+const mapStateToProps = (state: any) => {
+    return {
+        listFavs: state.bookmarks
+    }
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+        addFavorite: (character: CharacterInfo) => {
+            dispatch({
+                type: ADD_FAVORITE,
+                character
+            });
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardCharacter)

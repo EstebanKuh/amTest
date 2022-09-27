@@ -18,10 +18,11 @@
         background-color: $purple-color;
         cursor: pointer;
 
-        &.-left{
+        &.-left {
             border-radius: 0 0 0 15px;
         }
-        &.-rigth{
+
+        &.-rigth {
             border-radius: 0 0 15px 0;
         }
 
@@ -32,6 +33,52 @@
         .--img-icon {
             width: 1.2vw;
             margin-left: 0.2rem;
+        }
+    }
+}
+
+.container_favs {
+    min-width: 280px;
+    background-color: $purple-color;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    position: fixed;
+    top: 0;
+    padding-top: 4;
+    right: 10%;
+    z-index: 5;
+
+    .__list {
+        @include flex(row, center, center);
+        width: 100%;
+        height: 4em;
+        border-bottom: 2px solid #403b6d;
+
+        &:last-child{
+            border-bottom: none;
+        }
+
+        &.-first {
+            height: 36px;
+        }
+
+        .--img {
+            width: 30px;
+            height: 30px;
+            margin: 0.4em;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .--text {
+            @include font(14px, 0.2em, $white-color, $font-bold);
+            text-align: center;
+            width: 55%;
+        }
+
+        .--icon {
+            cursor: pointer;
         }
     }
 }
