@@ -7,12 +7,17 @@ import userAddFill from '../../../public/assets/icons/user_add_fill.svg'
 
 interface FavoritosProps {
   listFavs?: CharacterInfo[];
-  addCharacter?: (character: CharacterInfo) => void;
+  updateCharacters: () => void;
 }
 
-const Favorites = ({ listFavs, addCharacter }: FavoritosProps) => {
+const Favorites = ({ listFavs, updateCharacters }: FavoritosProps) => {
   const [openModal, setOpenModal] = useState(false);
   const [openFavs, setOpenFavs] = useState(false);
+
+  const actionUpdate = () => {
+    updateCharacters();
+    setOpenModal(false);
+  }
 
   return (
     <>
@@ -28,6 +33,7 @@ const Favorites = ({ listFavs, addCharacter }: FavoritosProps) => {
       </div>
       {openModal && <Modal
         setOpenModal={setOpenModal}
+        updateCharacters={actionUpdate}
       />}
 
       {openFavs && <>Favoritos abierto</>}

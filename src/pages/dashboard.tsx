@@ -49,11 +49,11 @@ const Dashboard = () => {
 
             <div className='container__character'>
                 {dataCharacters.map((character: CharacterInfo) =>
-                    <CardCharacter character={character} actionDeleteCharacter={actionDeleteCharacter} />
+                    <CardCharacter key={character.id} character={character} actionDeleteCharacter={actionDeleteCharacter} />
                 )}
             </div>
 
-            <Favorites></Favorites>
+            <Favorites updateCharacters={getDataCharacter}></Favorites>
 
         </main>
     )
