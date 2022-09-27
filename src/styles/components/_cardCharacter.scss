@@ -55,7 +55,7 @@
 
             .--head {
                 @include flex(row, space-around, center);
-                @include font(14px, 0.1px, $gray-color-font, 600, 19px);
+                @include font(14px, 0.1px, $gray-color-font, $font-bold, 19px);
                 text-transform: uppercase;
 
                 .-bookmark {
@@ -65,7 +65,7 @@
 
             .--body {
                 .--name {
-                    @include font(30px, 0.1em, $black-color, 600, 46px);
+                    @include font(30px, 0.1em, $black-color, $font-bold, 46px);
                     margin: 0;
                 }
 
@@ -75,7 +75,7 @@
                     @include font(14, 0.1em, #374A59, 400, 27px);
 
                     .-text {
-                        font-weight: 700;
+                        font-weight: $font-bolder;
                     }
                 }
             }

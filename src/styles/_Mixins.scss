@@ -5,11 +5,11 @@
     align-items: $align;
 }
 
-@mixin font ($fontSize, $letterSpacing, $color, $fontWeigth: 700, $lineHeigth: 25px, $fontFamily: 'Open Sans', $fontStyle: normal) {
+@mixin font ($fontSize, $letterSpacing, $color, $fontWeight: $font-bolder, $lineHeigth: 25px, $fontFamily: 'Open Sans', $fontStyle: normal) {
     font-family: $fontFamily;
     font-style: $fontStyle;
     font-size: $fontSize;
-    font-weight: $fontWeigth;
+    font-weight: $fontWeight;
     line-height: $lineHeigth;
     letter-spacing: $letterSpacing;
     color: $color;

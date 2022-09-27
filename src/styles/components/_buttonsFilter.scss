@@ -7,19 +7,17 @@
     }
 
     .filter__subtitle {
-        @include font(36px, 0, $white-color, 700);
+        @include font(36px, 0, $white-color, $font-bolder);
         margin: 1em;
         margin-bottom: 1.5em;
     }
 
     .container_actions {
-        width: 45%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        width: 80%;
+        @include flex(row, space-around, center);
 
         .btn {
-            @include font(17px, 0.2em, $white-color, 600);
+            @include font(17px, 0.2em, $white-color, $font-bold);
             min-height: 64px;
             min-width: 288px;
             border-radius: 4px;
