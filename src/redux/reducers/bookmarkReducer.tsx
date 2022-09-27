@@ -8,7 +8,6 @@ const stateInit = {
 }
 
 const reducer = (state = stateInit, action: any) => {
-    console.log('STATE :::::', state);
     switch (action.type) {
         case ADD_FAVORITE:
             if (state.bookmarks.length === 0) return { bookmarks: [action.character] }

@@ -52,14 +52,11 @@ const Modal = ({ setOpenModal, updateCharacters }: any) => {
             valid = false;
         }
 
-        console.log('VALIDO :::::', valid);
-
         return valid;
     }
 
     const saveData = async () => {
         try {
-            console.log('data character :::::', dataCharacter);
             if(!validCharacter()) return;
             await createCharacter(dataCharacter);
             updateCharacters();
